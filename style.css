@@ -1,0 +1,197 @@
+.app-wrapper {
+    display: flex;
+    width: 100%;
+}
+.app-sidenav {
+    width: 100vh;
+    max-width: 256px;
+    height: 100%;
+    box-shadow: 0 8px 17px rgba(0, 0, 0, 0.2);
+    transition: max-width 0.3s ease;
+    background-color: #2f353a;
+    color : #fff;
+}
+.app-sidenav__content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+.app-sidenav__header .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+.app-sidenav__footer,
+.app-sidenav__header {
+    padding: 15px;
+    height: auto;
+    max-width: 256px;
+    background-color: rgba(0,0,0,.3);
+}
+
+.app-sidenav__header .brand .logo {
+    max-width: 125px;
+    height: auto;
+}
+
+.app-sidenav .menu {
+    overflow-y: auto;
+    height: 100%;
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+.app-sidenav-menu-list {
+    line-height: 1.25;
+    position: relative;
+    padding: 0;
+}
+
+.app-sidenav-menu-list li {
+    list-style-type: none;
+}
+
+.app-sidenav-menu-list a {
+    color: #fff;
+    display: block;
+    padding: 0.5em 0.75em;
+    cursor: pointer;
+}
+.app-sidenav-menu-list a:hover {
+    background-color: #3273dc;
+    color: #fff;
+}
+.app-sidenav-menu-list > li > a:hover {
+    margin-left: -1em;
+    padding-left: 1.75em;
+}
+.app-sidenav-menu-list li > a.is-active {
+    background-color: #3273dc;
+    color: #fff;
+}
+
+.app-sidenav-menu-list > li > a.is-active {
+    margin-left: -1em;
+    padding-left: 1.75em;
+}
+
+.app-sidenav-menu-tree::after {
+    font-family: 'FontAwesome';
+    content: "\f105";
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.app-sidenav-menu-list > li.expanded .app-sidenav-menu-tree::after {
+    transform: rotate(90deg);
+}
+
+.app-sidenav-menu-list li ul {
+    border-left: 1px solid #dbdbdb;
+    margin-left: 0.75em;
+    padding-left: 0.75em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.app-sidenav-menu-list li.expanded ul {
+    max-height: 100vh;
+}
+
+.menu-label {
+    color: #e4e7ea;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.menu-label:not(:first-child) {
+    margin-top: 1em;
+}
+.menu-label:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.app-body {
+    width: 100%;
+    position: relative;
+}
+
+.app-header {
+    position: fixed;
+    z-index: 1020;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    border-bottom: 1px solid #c8ced3;
+    background-color: #fff;
+    padding: 0 1em;
+    right: 0;
+    left: 256px;
+}
+
+.app-sidebar__toggler {
+    padding: 0.25em 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 1.1em;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.app-sidebar__toggler-icon {
+    height: 23px;
+    background-image: url("data:image/svg+xml;charset=utf8;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzAgMzAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjNzM4MThmJyBzdHJva2Utd2lkdGg9JzIuMjUnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA3aDIyTTQgMTVoMjJNNCAyM2gyMicvPjwvc3ZnPg==");
+    display: inline-block;
+    width: 1.5em;
+    content: '';
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+
+.app-header .brand {
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0 1em;
+}
+
+.app-header .navbar-items {
+    font-size: 1.2em;
+    margin-left: auto;
+}
+
+.app-content {
+    margin-top: 55px;
+    padding: 30px;
+}
+
+@media (max-width : 990px) {
+    .app-sidenav {
+        overflow: hidden;
+        max-width: 0 !important;
+        position: absolute;
+        z-index: 1020;
+    }
+    .app-header {
+        left: 0 !important;
+    }
+}
+
+@media (min-width : 990px) {
+    .app-header .brand,
+    .app-sidebar__toggler {
+        display: none;
+    }
+}
+
+.uncollapse-sidebar .app-sidenav {
+    overflow: auto;
+    max-width: 256px !important;
+}
+
+.uncollapse-sidebar .app-header {
+    left: 256px !important;
+}

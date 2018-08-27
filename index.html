@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin Theme</title>
+        <link href="./reset.css" rel="stylesheet">
+        <link
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous">
+        <link href="./style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="app-wrapper">
+            <div class="app-sidenav__wrapper">
+                <aside id="app-sidebar" class="app-sidenav">
+                    <nav class="app-sidenav__content">
+                        <div class="app-sidenav__header">
+                            <div class="brand">
+                                <!-- <img class="logo"
+                                src="https://buefy.github.io/static/img/buefy.1d65c18.png"> -->
+                                <h1 class="name">Brand</h1>
+                            </div>
+                        </div>
+                        <div class="menu">
+                            <p class="menu-label">
+                                General
+                            </p>
+                            <ul class="app-sidenav-menu-list">
+                                <li>
+                                    <a>Dashboard</a>
+                                </li>
+                                <li>
+                                    <a>Customers</a>
+                                </li>
+                            </ul>
+                            <p class="menu-label">
+                                Administration
+                            </p>
+                            <ul class="app-sidenav-menu-list">
+                                <li>
+                                    <a>Team Settings</a>
+                                </li>
+                                <li>
+                                    <a>Manage Your Team</a>
+                                </li>
+                                <li>
+                                    <a>Invitations</a>
+                                </li>
+                                <li>
+                                    <a>Cloud Storage Environment Settings</a>
+                                    <ul>
+                                        <li>
+                                            <a>Members</a>
+                                        </li>
+                                        <li>
+                                            <a>Plugins</a>
+                                        </li>
+                                        <li>
+                                            <a>Add a member</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>Authentication</a>
+                                </li>
+                            </ul>
+                            <p class="menu-label">
+                                Transactions
+                            </p>
+                            <ul class="app-sidenav-menu-list">
+                                <li>
+                                    <a>Payments</a>
+                                </li>
+                                <li>
+                                    <a>Transfers</a>
+                                </li>
+                                <li>
+                                    <a>Balance</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="app-sidenav__footer">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                        </div>
+                    </nav>
+
+                </aside>
+            </div>
+            <main class="app-body">
+                <header class="app-header">
+                    <button class="app-sidebar__toggler" id="app-sidebar__toggler">
+                        <span class="app-sidebar__toggler-icon"></span>
+                    </button>
+                    <div class="brand">
+                        <p>Brand</p>
+                    </div>
+                    <div class="navbar-items">
+                        <a href="#">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </header>
+                <div class="app-content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem,
+                    quaerat. Tempora dolorum veritatis explicabo totam aut saepe deleniti ex sed
+                    pariatur ullam ipsa a quam, esse dolores officia voluptas cumque. Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Tempora assumenda officia incidunt.
+                    Aspernatur deleniti sunt repudiandae atque, ab assumenda iste doloremque fugit
+                    voluptas perspiciatis odit, facilis libero tempore magni non! Lorem ipsum dolor
+                    sit amet consectetur adipisicing elit. Dolore molestiae necessitatibus nemo
+                    labore ab, ipsum aliquid ad excepturi repellat? Molestiae fugiat mollitia libero
+                    quia quas ad, velit dolor dolorem quasi!
+                </div>
+            </main>
+        </div>
+        <script>
+            var treemenuLists = document.querySelectorAll('.app-sidenav-menu-list > li > a');
+
+            treemenuLists.forEach(function (elem) {
+                if (elem.nextElementSibling && elem.nextElementSibling.nodeName == 'UL') {
+                    elem.classList.add('app-sidenav-menu-tree');
+                    elem.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        event.target.parentElement.classList.toggle('expanded');
+                    });
+                }
+            });
+
+            document.getElementById('app-sidebar__toggler').addEventListener('click', function () {
+                    document.body.classList.toggle('uncollapse-sidebar');
+            });
+        </script>
+    </body>
+
+</html>
